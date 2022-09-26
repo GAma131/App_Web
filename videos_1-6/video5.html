@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 5 de Vue</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <div id="app">
+        <button v-on:click="contar">Contar</button>
+        <button v-on:click="reset">Resetear</button>
+        <p>
+            {{contador}}
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador:0
+            },
+            methods: {
+                contar:function(){
+                    this.contador++;
+                },
+                reset:function(){
+                    this.contador =0;
+                },
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 2 de Vue</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <div id="app">
+        <input type="text" v-on:input="cambiarTitulo" />
+        <input type="text" v-model="tema" />
+        <p>{{ titulo }}</p>
+        <span>{{ tema }}</span>
+        <p>{{saludar() }}</p>
+        <p>{{ saludar() }} - <a href="{{ link }}"> Google</a> </p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Hola mundo',
+                observaciones: 'Programando con vue',
+                tema: 'Tema 2',
+                link: 'https://google.com'
+            },
+            methods: {
+                cambiarTitulo: function (event) {
+                    this.titulo = event.target.value;
+                },
+                saludar: () => {
+                    return 'Saludando desde Vue';
+                },
+
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
