@@ -109,22 +109,39 @@
       <button type="submit" class="btn btn-primary">Sign in</button>
     </form> -->
 
-    <div id="app">
-      <label for="inputAddress2">Nombre</label>
-      <input type="text" v-model="Nombre" />
-      <br />
+    <!-- <div class="form-group col-md-6">
+        <label for="inputEmail4">Nombre</label>
+        <input
+        v-on:input="cambiarNombre"
+          type="email"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Email"
+        />
+      </div> -->
 
-      <label for="inputAddress2">Apellido</label>
-      <input type="text" v-model="Apellido" />
-      <br />
+
+    <div id="app">
+      <div class="form-group">
+        <div class="form-group col-md-6">
+          <label for="inputAddress2">Nombre</label>
+          <input type="text" v-model="Nombre" />
+          <br />
+        </div>
+        
+        <div class="form-group col-md-6">
+            <label for="inputAddress2">Apellido</label>
+            <input type="text" v-model="Apellido" />
+            <br />
+        </div>
+      </div>
+
 
       <span>{{ Nombre }}</span>
       <br />
       <span>{{ Apellido }}</span>
     </div>
 
-    <!-- <div id="app2">
-    </div> -->
     <script>
       new Vue({
         el: "#app",
@@ -140,17 +157,6 @@
         },
       });
 
-      // new Vue({
-      //   el: "#app2",
-      //   data: {
-      //     Apellido: "",
-      //   },
-      //   methods: {
-      //     cambiarTitulo: function (event) {
-      //       this.Apellido = event.target.value;
-      //     },
-      //   },
-      // });
     </script>
   </body>
 </html>
