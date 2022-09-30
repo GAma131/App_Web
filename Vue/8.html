@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 5 de Vue</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <div id="app">
+        <button v-on:click="contar(2)">Contar</button>
+        <button v-on:click="reset">Resetear</button>
+        <p>
+            {{contador}}
+        </p>
+        <p v-on:mousemove="getCoordenadas">
+            Coordenadas: {{x}}/{{y}}
+        </p>
+        <p>
+            <input type="text" v-on:keyup.enter="alertaMensaje">
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador:0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                contar:function(parametro){
+                    this.contador += parametro;
+                },
+                reset:function(){
+                    this.contador = 0;
+                },
+                getCoordenadas: function(){
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                alertaMensaje: function(){
+                    alert("Mensaje de tecla");
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <header>
+        <h1>FriendList</h1>
+    </header>
+    <section id="app">
+        <ul>
+            <li>
+                <h2>Manuel Lorenzo</h2>
+                <button v-on:click="show = !show">Mostrar detalles</button>
+                <transition name="fade">
+                    <ul>
+                        <li v-if="show"><strong>Phone:</strong> 012345678991</li>
+                        <li v-if="show"><strong>Email:</strong>manuel@localhost.com</li>
+                    </ul>
+                </transition>
+            </li>
+            <li>
+                <h2>Julies Jones</h2>
+                <button v-on:click="show2 = !show2">Mostrar detalles</button>
+                <transition name="fade">
+                    <ul>
+                        <li v-if="show2"><strong>Phone:</strong> 09876543221</li>
+                        <li v-if="show2"><strong>Email:</strong>julie@localhost.com</li>
+                    </ul>
+                </transition>
+            </li>
+        </ul>
+    </section>
+
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            show: true,
+            show2: true
+        }
+    })
+</script>
+
+</html>
