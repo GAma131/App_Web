@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <div id="app">
+        <input type="text" name="var" id="var1">
         <button v-on:click="contar">Contar</button>
         <button v-on:click="reset">Resetear</button>
         <p>
@@ -22,14 +23,14 @@
         new Vue({
             el: '#app',
             data: {
-                contador:0
+                contador:"",
             },
             methods: {
                 contar:function(){
-                    this.contador++;
+                    this.contador+=document.getElementById("var1").value+", ";
                 },
                 reset:function(){
-                    this.contador =0;
+                    this.contador ="";
                 },
             }
         });

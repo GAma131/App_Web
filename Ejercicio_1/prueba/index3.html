@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index3.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="overlay" id="app">
+      <div id="form">
+        <div class="con">
+          <header class="head-form">
+            <h2>Información</h2>
+          </header>
+
+          <br />
+          <div class="field-set">
+            <span class="input-item">
+              <i class="fa fa-user-circle"></i>
+            </span>
+
+            <input
+              class="form-input"
+              type="text"
+              class="form-control"
+              maxlength="20"
+              id="inputNombre"
+              placeholder="Nombre"
+              required
+            />
+            <br />
+            <span class="input-item">
+              <i class="fa fa-user-circle"></i>
+            </span>
+
+            <input
+              class="form-input"
+              type="text"
+              class="form-control"
+              maxlength="20"
+              id="inputApellidoP"
+              placeholder="Apellido Paterno"
+              required
+            />
+            <br />
+            <span class="input-item">
+              <i class="fa fa-user-circle"></i>
+            </span>
+
+            <input
+              class="form-input"
+              type="text"
+              class="form-control"
+              maxlength="20"
+              id="inputApellidoM"
+              placeholder="Apellido Materno"
+              required
+            />
+            <br />
+            <span class="input-item">
+              <i class="fa fa-user-circle"></i>
+            </span>
+
+            <input
+              class="form-input"
+              type="number"
+              class="form-control"
+              min="0"
+              max="99"
+              id="inputEdad"
+              placeholder="Edad"
+              required
+            />
+            <br />
+            <span class="input-item">
+              <i class="fa fa-user-circle"></i>
+            </span>
+
+            <input
+              class="form-input"
+              type="text"
+              class="form-control"
+              maxlength="20"
+              id="inputEstado"
+              placeholder="Estado"
+              required
+            />
+            <br />
+
+            <button v-on:click="agregar">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido Paterno</th>
+            <th scope="col">Apellido Materno</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ Nombre }}</td>
+            <td>{{ ApellidoP }}</td>
+            <td>{{ ApellidoM }}</td>
+            <td>{{ Edad }}</td>
+            <td>{{ Estado }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button v-on:click="reset">Quitar todo</button>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          Nombre: "",
+          ApellidoP: "",
+          ApellidoM: "",
+          Edad: "",
+          Estado: "",
+        },
+        methods: {
+          agregar: function () {
+            this.Nombre +=
+              "<br/>" + document.getElementById("inputNombre").value;
+            this.ApellidoP +=
+              "<br/>" + document.getElementById("inputApellidoP").value;
+            this.ApellidoM +=
+              "<br/>" + document.getElementById("inputApellidoM").value;
+            this.Edad += "<br/>" + document.getElementById("inputEdad").value;
+            this.Estado +=
+              "<br/>" + document.getElementById("inputEstado").value;
+          },
+          reset: function () {
+            this.Nombre = "";
+            this.ApellidoP = "";
+            this.ApellidoM = "";
+            this.Edad = "";
+            this.Estado = "";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
