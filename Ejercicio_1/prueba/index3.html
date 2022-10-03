@@ -103,7 +103,7 @@
       </div>
 
       <table class="table">
-        <thead class="thead-dark">
+        <thead id="thead">
           <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Apellido Paterno</th>
@@ -137,15 +137,17 @@
         },
         methods: {
           agregar: function () {
-            this.Nombre +=
-              "<br/>" + document.getElementById("inputNombre").value;
+            this.Nombre +=document.getElementById("inputNombre").value;
+
             this.ApellidoP +=
-              "<br/>" + document.getElementById("inputApellidoP").value;
+            document.getElementById("inputApellidoP").value;
+
             this.ApellidoM +=
-              "<br/>" + document.getElementById("inputApellidoM").value;
-            this.Edad += "<br/>" + document.getElementById("inputEdad").value;
-            this.Estado +=
-              "<br/>" + document.getElementById("inputEstado").value;
+            document.getElementById("inputApellidoM").value;
+
+            this.Edad +=document.getElementById("inputEdad").value;
+
+            this.Estado +=document.getElementById("inputEstado").value;
           },
           reset: function () {
             this.Nombre = "";

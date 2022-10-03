@@ -147,3 +147,7 @@ button:hover {
     transform: translateY(5px);
   }
 }
+
+#thead{
+  background-color: #ffe6fa;
+}
