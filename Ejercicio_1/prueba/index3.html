@@ -102,25 +102,27 @@
         </div>
       </div>
 
-      <table class="table">
-        <thead id="thead">
-          <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido Paterno</th>
-            <th scope="col">Apellido Materno</th>
-            <th scope="col">Edad</th>
-            <th scope="col">Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ Nombre }}</td>
-            <td>{{ ApellidoP }}</td>
-            <td>{{ ApellidoM }}</td>
-            <td>{{ Edad }}</td>
-            <td>{{ Estado }}</td>
-          </tr>
-        </tbody>
+      <table class="table table-bordered" id="tabla">
+        <tr>
+          <th>Nombres introducidos</th>
+          <td>{{ Nombre }}</td>
+        </tr>
+        <tr>
+          <th scope="col">Apellidos Paternos introducidos</th>
+          <td>{{ ApellidoP }}</td>
+        </tr>
+        <tr>
+          <th scope="col">Apellidos Maternos introducidos</th>
+          <td>{{ ApellidoM }}</td>
+        </tr>
+        <tr>
+          <th scope="col">Edades introducidas</th>
+          <td>{{ Edad }}</td>
+        </tr>
+        <tr>
+          <th scope="col">Estados introducidos</th>
+          <td>{{ Estado }}</td>
+        </tr>
       </table>
       <button v-on:click="reset">Quitar todo</button>
     </div>
@@ -137,17 +139,17 @@
         },
         methods: {
           agregar: function () {
-            this.Nombre +=document.getElementById("inputNombre").value+" ";
+            this.Nombre += document.getElementById("inputNombre").value + " - ";
 
             this.ApellidoP +=
-            document.getElementById("inputApellidoP").value+" ";
+              document.getElementById("inputApellidoP").value + " - ";
 
             this.ApellidoM +=
-            document.getElementById("inputApellidoM").value+" ";
+              document.getElementById("inputApellidoM").value + " - ";
 
-            this.Edad +=document.getElementById("inputEdad").value+" ";
+            this.Edad += document.getElementById("inputEdad").value + " - ";
 
-            this.Estado +=document.getElementById("inputEstado").value+" ";
+            this.Estado += document.getElementById("inputEstado").value + " - ";
           },
           reset: function () {
             this.Nombre = "";

@@ -148,6 +148,11 @@ button:hover {
   }
 }
 
-#thead{
-  background-color: #ffe6fa;
+#tabla {
+  margin: auto 300px;
+  text-align: left;
+}
+
+td{
+  text-align: left;
 }
