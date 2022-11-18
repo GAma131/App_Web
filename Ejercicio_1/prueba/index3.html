@@ -137,17 +137,17 @@
         },
         methods: {
           agregar: function () {
-            this.Nombre +=document.getElementById("inputNombre").value;
+            this.Nombre +=document.getElementById("inputNombre").value+" ";
 
             this.ApellidoP +=
-            document.getElementById("inputApellidoP").value;
+            document.getElementById("inputApellidoP").value+" ";
 
             this.ApellidoM +=
-            document.getElementById("inputApellidoM").value;
+            document.getElementById("inputApellidoM").value+" ";
 
-            this.Edad +=document.getElementById("inputEdad").value;
+            this.Edad +=document.getElementById("inputEdad").value+" ";
 
-            this.Estado +=document.getElementById("inputEstado").value;
+            this.Estado +=document.getElementById("inputEstado").value+" ";
           },
           reset: function () {
             this.Nombre = "";

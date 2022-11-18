@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue con Firestore</title>
+
+    <link rel="stylesheet" href="cssIndex.css" />
+    <link rel="stylesheet" href="jsIndex.js" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="app">
+        <h1>Prueba</h1>
+        <br />
+        <form>
+          <input type="text" placeholder="Introduce un nombre: " />
+          <br />
+          <input type="text" placeholder="Introduce una edad: " />
+          <br />
+          <button>Añadir usuario</button>
+          <br />
+          <hr />
+          <ul>
+            <li v-for="item in usuarios" v-bind:key="item.id">
+              {{item.data.nombre}}
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  </body>
+</html>
